@@ -1,0 +1,9 @@
+﻿node_modules/
+.env
+token.json
+temp_uploads/
+oauth-credentials.json
+Backend/node_modules/
+CensusBackend/node_modules/
+dist/
+build/

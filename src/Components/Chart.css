@@ -1,0 +1,317 @@
+ /* ─── Base ─────────────────────────────────────────── */
+.live-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1f5e 0%, #2d3494 40%, #1e3a8a 70%, #1e2d6b 100%);
+  font-family: 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
+  color: #fff;
+  padding: 0 0 40px 0;
+}
+
+/* ─── Header ────────────────────────────────────────── */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nepal-flag {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.govt-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+}
+
+.office-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+.office-sub {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fc8181;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: #fc8181;
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ─── Stats Row ─────────────────────────────────────── */
+.stats-row {
+  display: flex;
+  gap: 16px;
+  padding: 20px 32px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.11);
+}
+
+.stat-card.today-card  { border-color: rgba(99,179,237,0.35); }
+.stat-card.token-card  { border-color: rgba(72,233,189,0.35); }
+.stat-card.info-card   { border-color: rgba(167,139,250,0.3); }
+.stat-card.muni-card   { border-color: rgba(251,191,36,0.3); }
+
+.stat-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Charts Grid ───────────────────────────────────── */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 32px;
+}
+
+.chart-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  transition: box-shadow 0.2s;
+}
+
+.chart-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.chart-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.chart-card.half-width {
+  grid-column: span 1;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.chart-icon {
+  font-size: 1rem;
+}
+
+.chart-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+  flex: 1;
+}
+
+.chart-badge {
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.chart-badge.blue  { background: rgba(99,179,237,0.2); color: #90cdf4; border: 1px solid rgba(99,179,237,0.3); }
+.chart-badge.green { background: rgba(72,233,189,0.2); color: #81e6d9; border: 1px solid rgba(72,233,189,0.3); }
+
+.chart-body {
+  padding: 8px 12px 12px;
+  height: 240px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ─── Municipality Table ────────────────────────────── */
+.table-card {
+  margin: 16px 32px 0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.muni-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.muni-table thead tr {
+  background: rgba(255,255,255,0.06);
+}
+
+.muni-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.muni-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s;
+}
+
+.muni-table tbody tr:last-child { border-bottom: none; }
+
+.muni-table tbody tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.muni-table td {
+  padding: 11px 16px;
+  color: rgba(255,255,255,0.82);
+}
+
+.td-num   { color: rgba(255,255,255,0.3); font-size: 0.75rem; }
+.td-name  { font-weight: 600; font-size: 0.9rem; }
+.td-count { color: #90cdf4; font-weight: 700; }
+.td-token { color: #81e6d9; font-weight: 700; }
+
+.progress-wrap {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  height: 8px;
+  width: 140px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(72,233,189,0.9), rgba(99,179,237,0.9));
+  border-radius: 20px;
+  transition: width 0.6s ease;
+}
+
+.progress-label {
+  position: absolute;
+  right: -34px;
+  top: -3px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.td-bar { padding-right: 48px; }
+
+/* ─── Footer ────────────────────────────────────────── */
+.dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 32px 0;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.04em;
+}
+
+.footer-sep { opacity: 0.4; }
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .dashboard-header { padding: 14px 16px; flex-wrap: wrap; gap: 10px; }
+  .stats-row        { padding: 12px 16px; }
+  .charts-grid      { grid-template-columns: 1fr; padding: 0 16px; gap: 12px; }
+  .chart-card.half-width { grid-column: 1 / -1; }
+  .table-card       { margin: 12px 16px 0; }
+  .office-title     { font-size: 1rem; }
+}
