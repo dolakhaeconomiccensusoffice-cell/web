@@ -2,7 +2,7 @@
 import './create.css';
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
-const API = 'http://localhost:5000/api';
+const API = 'https://server-r5ni.onrender.com/api';
 
 const Create = () => {
   const [username, setUsername] = useState('');

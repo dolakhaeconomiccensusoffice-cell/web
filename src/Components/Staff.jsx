@@ -4,7 +4,7 @@ import './Staff.css';
 // ─────────────────────────────────────────────────────────────
 //  BACKEND URL  — change this when you deploy
 // ─────────────────────────────────────────────────────────────
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://server-r5ni.onrender.com';
 
 // ─── App constants ────────────────────────────────────────────
 const DRIVE_FOLDER_NAME = 'DECO_Dolakha_Census_2082';

@@ -7,7 +7,7 @@
 import './Login.css';
 
 // ─── API CONFIG ───────────────────────────────────────────────────────────────
-const API = 'http://localhost:5000/api';
+const API = 'https://server-r5ni.onrender.com/api';
 
 // STATIC DASHBOARD DATA
 const DISTRICT_STATS = {

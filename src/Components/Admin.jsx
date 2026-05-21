@@ -4,7 +4,7 @@ import './Admin.css';
 // ============================
 // API Base URL
 // ============================
-const API = 'http://localhost:5000/api';
+const API = 'https://server-r5ni.onrender.com/api';
 
 // ============================
 // Form Record Management Component
